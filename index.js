@@ -15,6 +15,11 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 const port = 5000
 
+app.get('/', (req, res) => {
+    res.send("hello from db")
+
+
+})
 
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 client.connect(err => {
